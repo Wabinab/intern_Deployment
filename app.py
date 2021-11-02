@@ -2,8 +2,12 @@ from flask import Flask, jsonify, request, render_template
 import pickle
 import numpy as np
 import pandas as pd 
-from fastai.tabular.all import *
+# from fastai.tabular.all import *
 from datetime import datetime
+
+
+def load_pickle(fn):
+    with open(fn, 'rb') as f: return pickle.load(f)
 
 app = Flask(__name__)
 model = load_pickle("model.pkl")
