@@ -11,10 +11,10 @@ def load_pickle(fn):
 
 app = Flask(__name__)
 model = load_pickle("model.pkl")
-to = load_pickle("to.pkl")
+# to = load_pickle("to.pkl")
 
-Company = np.array(to.classes["Company"])
-City = np.array(to.classes["City"])
+Company = np.load("company.npy")
+City = np.load("city.npy")
 start_date = datetime.strptime("01/01/2016", "%d/%m/%Y")
 
 
